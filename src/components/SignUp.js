@@ -15,7 +15,7 @@ import Container from "@material-ui/core/Container";
 import { withStyles } from "@material-ui/core/styles";
 import Copyright from "./CopyRights";
 import { baseUrl } from "../Config";
-
+import axios from "axios";
 const styles = (theme) => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -53,11 +53,32 @@ class SignUp extends React.Component {
       data.get("confirm_password")
     ) {
       if (data.get("password") === data.get("confirm_password")) {
-        const url = baseUrl + "/api/create-user";
-        fetch(url, {
-          method: "POST",
-          body: data,
-        });
+        const url =
+          baseUrl + "/createuser";
+        // fetch(url, {
+        //   method: "POST",
+        //   body: data,
+        // });
+
+        let config = {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        };
+        const formData = {
+          email: data.get("email"),
+          username: data.get("username"),
+          password: data.get("password"),
+          confirm_password: data.get("confirm_password"),
+        };
+        axios
+          .post(url, formData)
+          .then(function (err, res) {
+            alert("success");
+          })
+          .catch(function (err) {
+            alert("Error");
+          });
       } else {
         alert("Password and Confirm Password not matching");
       }
