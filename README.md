@@ -1,3 +1,6 @@
+
+[![Run App on Repl.it](https://repl.it/badge/github/arvindkalbhor/auth-app)](https://repl.it/github/arvindkalbhor/auth-app)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
