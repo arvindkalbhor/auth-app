@@ -1,1 +1,1 @@
-export const baseUrl = 'http://localhost:7000'
+export const baseUrl = 'https://auth-app-1.shubhamdesai.repl.co/api/v1/users'

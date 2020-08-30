@@ -13,6 +13,7 @@ import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Copyright from "./CopyRights";
 import { withStyles } from "@material-ui/core/styles";
+import axios from "axios";
 import { baseUrl } from "../Config";
 const styles = (theme) => ({
   paper: {
@@ -40,11 +41,19 @@ class Login extends React.Component {
     const data = new FormData(event.target);
 
     if (data.get("password") && data.get("email")) {
-      const url = baseUrl + "/api/login";
-      fetch(url, {
-        method: "POST",
-        body: data,
-      });
+      const formData = {
+          email: data.get("email"),
+          password: data.get("password"),
+        };
+      const url = baseUrl + "/login";
+      axios
+          .post(url, formData)
+          .then(function (err, res) {
+            alert("success");
+          })
+          .catch(function (err) {
+            alert("Error");
+          });
     } else {
       alert("Please enter email or password");
     }

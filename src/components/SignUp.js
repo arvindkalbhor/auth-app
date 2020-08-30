@@ -54,7 +54,7 @@ class SignUp extends React.Component {
     ) {
       if (data.get("password") === data.get("confirm_password")) {
         const url =
-          baseUrl + "/createuser";
+          baseUrl + "/signup";
         // fetch(url, {
         //   method: "POST",
         //   body: data,
@@ -67,9 +67,9 @@ class SignUp extends React.Component {
         };
         const formData = {
           email: data.get("email"),
-          username: data.get("username"),
+          name: data.get("username"),
           password: data.get("password"),
-          confirm_password: data.get("confirm_password"),
+          passwordConfirm: data.get("confirm_password"),
         };
         axios
           .post(url, formData)
