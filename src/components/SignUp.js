@@ -60,11 +60,11 @@ class SignUp extends React.Component {
         //   body: data,
         // });
 
-        let config = {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        };
+        // let config = {
+        //   headers: {
+        //     "Content-Type": "application/json",
+        //   },
+        // };
         const formData = {
           email: data.get("email"),
           name: data.get("username"),
