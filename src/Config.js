@@ -1,1 +1,1 @@
-export const baseUrl = 'https://auth-app-1.shubhamdesai.repl.co/api/v1/users'
+export const baseUrl = 'https://shrouded-crag-74993.herokuapp.com/api/v1/users'
